@@ -1,0 +1,14 @@
+//To run the container
+docker run -d --name asterisk -p 5060:5060/udp -p 8088:8088 -p 10000-10100:10000-10100/udp asterisk-image
+
+//To run the container with external config files
+docker run -d --name asterisk -p 5060:5060/udp -p 8088:8088 -p 10000-10120:10000-10120/udp -v "Z:\SIMS Project(ananya)\asterisk-docker\config:/etc/asterisk" asterisk-image
+
+//To stop the container
+docker stop asterisk
+
+//To remove the container
+docker rm asterisk
+
+//To run asterisk CLI
+docker exec -it asterisk asterisk -rvv

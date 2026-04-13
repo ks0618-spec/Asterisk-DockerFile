@@ -1,0 +1,5 @@
+[ai-inbound]
+exten => _X.,1,Answer()
+same => n,Stasis(ai-agent)
+same => n,Hangup()
+

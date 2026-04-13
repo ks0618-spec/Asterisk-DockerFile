@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  asterisk:
+    image: asterisk-vm:22.8.2
+    container_name: asterisk
+    network_mode: host
+    volumes:
+      - ./config:/etc/asterisk
+      - ./var:/var/lib/asterisk
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+#    sysctls:
+ #     - net.core.rmem_max=134217728
+  #    - net.core.rmem_default=134217728
